@@ -139,22 +139,7 @@ var actionbardata = {"siteID":"191575615","siteName":"Bikejoring 101","siteURL":
 
 <body class="home page-template-default page page-id-5 logged-in admin-bar no-customize-support wp-embed-responsive customizer-styles-applied singular image-filters-enabled mobile-nav-side has-marketing-bar highlander-enabled highlander-light">
 
-		<div id="wpadminbar" class="nojq nojs ltr">
-							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
-						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
-						<ul id="wp-admin-bar-root-default" class="ab-top-menu">
-			
-		<li id="wp-admin-bar-blog" class="my-sites mb-trackable"><a class="ab-item"  href="https://wordpress.com/sites/debhinojosa.wordpress.com">My Site</a>		</li>
-		<li id="wp-admin-bar-jumptotop-button-menu"><a class="ab-item"  href="#"><div id="jumptotop"><span class="noticon noticon-top"></span></div></a>		</li>
-		<li id="wp-admin-bar-newdash" class="mb-trackable"><a class="ab-item"  href="https://wordpress.com/read">Reader</a>		</li>		</ul>
-			<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
-			
-		<li id="wp-admin-bar-notes" class="menupop">		<div class="ab-item ab-empty-item" ><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read"></span><span class="noticon noticon-bell"></span><span class="ab-text">Notifications</span></div><div id="wpnt-notes-panel2" style="display:none" lang="en" dir="ltr"><div class="wpnt-notes-panel-header"><span class="wpnt-notes-header"></span><span class="wpnt-notes-panel-link"></span></div></div>		</li>
-		<li id="wp-admin-bar-my-account" class="with-avatar mb-trackable"><a class="ab-item"  href="https://wordpress.com/me/"><img alt='' src='https://0.gravatar.com/avatar/61e9fa9d6727ec965cad1d8e498a70e4?s=32&#038;d=mm&#038;r=G' class='avatar avatar-32' height='32' width='32' /><span class="ab-text">Me</span></a>		</li>
-		<li id="wp-admin-bar-ab-new-post" class="mb-trackable"><a class="ab-item"  href="https://wordpress.com/post/debhinojosa.wordpress.com"><span>Write</span></a>		</li>		</ul>
-				</div>
-							<a class="screen-reader-shortcut" href="https://debhinojosa.wordpress.com/wp-login.php?action=logout&#038;_wpnonce=afc311af53">Log Out</a>
-					</div>
+
 
 	
 <script type="text/javascript">
@@ -439,79 +424,7 @@ jQuery(document).ready( function($) {
 
 </div><!-- #page -->
 
-<!--  -->
-	<script type="text/javascript">
-	/* <![CDATA[ */
-		jQuery(document).ready( function($) {
-			function doFollowingHover() {
-				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
 
-				$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
-
-					$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
-				});
-				$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
-					$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
-				});
-			}
-							doFollowingHover();
-			
-			$('#wp-admin-bar-follow > a').click( function( e ) {
-				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
-
-				e.preventDefault();
-
-				var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
-
-				if ( li.hasClass( 'subscribed' ) ) {
-					li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
-					link.html( "Follow" );
-
-					$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
-
-					var action = 'ab_unsubscribe_from_blog';
-				} else {
-					li.addClass( 'subscribed' ).removeClass( 'unfollow' );
-					link.html( "Following" );
-
-						var left = 131 - link.width();
-						li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
-						$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/\u0022\u003Eyour reader\u003C\/a\u003E. You can manage email alerts from your \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/following\/edit\/\u0022\u003Esubscriptions page\u003C\/a\u003E." );
-
-						$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
-
-						setTimeout( function() {
-							$('body').on( 'click.bubble touchstart.bubble', function(e) {
-								if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
-									hideBubble();
-							});
-							setTimeout( hideBubble, 15000 );
-						}, 500 );
-
-					var action = 'ab_subscribe_to_blog';
-					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
-						doFollowingHover();
-						$(this).unbind( '.shift' );
-					});
-				}
-
-				var nonce = link.attr( 'href' ).split( '_wpnonce=' );
-				nonce = nonce[1];
-
-				$.post( "https:\/\/debhinojosa.wordpress.com\/wp-admin\/admin-ajax.php", {
-					'action': action,
-					'_wpnonce': nonce,
-					'source': 'admin_bar',
-					'blog_id': 191575615				});
-			});
-		});
-	/* ]]> */
-	</script>
-<div id="marketingbar" class="marketing-bar noskim"><div class="marketing-bar-text">Create your website with WordPress.com</div><a class="marketing-bar-button" href="https://wordpress.com/start/?ref=marketing_bar">Get started</a><a class="marketing-bar-link" tabindex="-1" aria-label="Create your website at WordPress.com" href="https://wordpress.com/start/?ref=marketing_bar"></a></div><script src='//0.gravatar.com/js/gprofiles.js?ver=202114y' id='grofiles-cards-js'></script>
-<script id='wpgroho-js-extra'>
-var WPGroHo = {"my_hash":"61e9fa9d6727ec965cad1d8e498a70e4"};
-</script>
-<script type='text/javascript' src='https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h'></script>
 
 	<script>
 		// Initialize and attach hovercards to all gravatars
